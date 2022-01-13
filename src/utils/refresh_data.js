@@ -38,7 +38,7 @@ const refresh_data = (url, callback) => {
                     move_seq_list.push({move_num, move_white, move_black});
                 }
 
-                if (index==move_seq.length-1){
+                if ( (index==move_seq.length-1) && (index%3!=2)){//if last move is not a complete set (move #, white move, black move)
                     move_seq_list.push({move_num, move_white, move_black});
                 }
 
