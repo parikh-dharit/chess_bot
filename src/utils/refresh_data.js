@@ -2,7 +2,7 @@ const cheerio = require('cheerio');
 const rp = require('request-promise');
 const fs = require('fs');
 
-const refresh_data = (url, callback) => {
+const refresh_data = (url, file_path, callback) => {
     //const url_response = request.get(url);
     //const url_response = await fetch(url); -- requires node 12.20 or up
     console.log("Refresh data called");
@@ -48,7 +48,7 @@ const refresh_data = (url, callback) => {
         });
 
         // Save the parsed data to a file
-        fs.writeFile("1-data.json", JSON.stringify(chessco_list), err => {
+        fs.writeFile(file_path, JSON.stringify(chessco_list), err => {
         
             // Checking for errors
             if (err) throw err; 
